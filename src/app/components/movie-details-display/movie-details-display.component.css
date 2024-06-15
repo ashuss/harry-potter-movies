@@ -63,6 +63,18 @@ button {
     }
 }
 
-table th, td {
+.tr {
+    border: 1px solid;
     font-size: 14px;
+}
+
+.tr .col-sm-4, .col-md-4 {
+    border-right: 1px solid;
+    padding: 8px;
+    font-weight: bold;
+    /* text-align: right; */
+}
+
+.tr .col-sm-8, .col-md-8 {
+    padding: 8px;
 }

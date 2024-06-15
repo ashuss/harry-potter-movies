@@ -6,7 +6,7 @@
 
 <div class="container" *ngIf="!showLoader">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-sm-10 col-md-10">
 
             <button class="back" (click)="goBack()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -16,46 +16,63 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12 col-md-12">
             <h3>{{movieDetails.title}}</h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3 col-md-3">
             <img [src]="imgSrc" class="poster" alt="Poster" width="auto" height="auto">
         </div>
-        <div class="col-md-9 summary">
+        <div class="col-sm-9 col-md-9 summary">
             <b>Summary:</b> {{movieDetails.summary}}
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 details">
+        <div class="col-sm-12 col-md-12 details">
             <span>Details</span>
         </div>
-        <div class="row">
-            <table style="border: 1px solid;">
-                <tr>
-                    <th>Box Office</th>
-                    <td>{{movieDetails.box_office | budget}}</td>
-                </tr>
-                <tr>
-                    <th>Budget</th>
-                    <td>{{movieDetails.budget | budget}}</td>
-                </tr>
-                <tr>
-                    <th>Duration</th>
-                    <td>{{movieDetails.duration | timePipe}}</td>
-                </tr>
-                <tr>
-                    <th>Producers</th>
-                    <td>{{movieDetails.producers}}</td>
-                </tr>
-                <tr>
-                    <th>Cinematographers</th>
-                    <td>{{movieDetails.cinematographers}}</td>
-                </tr>
-            </table>
-        </div>
 
+
+    </div>
+    <div class="row tr">
+        <div class="col-sm-4 col-md-4">
+            Box Office
+        </div>
+        <div class="col-sm-8 col-md-8">
+            {{movieDetails.box_office | budget}}
+        </div>
+    </div>
+    <div class="row tr">
+        <div class="col-sm-4 col-md-4">
+            Budget
+        </div>
+        <div class="col-sm-8 col-md-8">
+            {{movieDetails.budget | budget}}
+        </div>
+    </div>
+    <div class="row tr">
+        <div class="col-sm-4 col-md-4">
+            Duration
+        </div>
+        <div class="col-sm-8 col-md-8">
+            {{movieDetails.duration | timePipe}}
+        </div>
+    </div>
+    <div class="row tr">
+        <div class="col-sm-4 col-md-4">
+            Producers
+        </div>
+        <div class="col-sm-8 col-md-8">
+            {{movieDetails.producers}}
+        </div>
+    </div>
+    <div class="row tr">
+        <div class="col-sm-4 col-md-4">
+            Cinematographers
+        </div>
+        <div class="col-sm-8 col-md-8">
+            {{movieDetails.cinematographers}}
+        </div>
     </div>
 </div>
