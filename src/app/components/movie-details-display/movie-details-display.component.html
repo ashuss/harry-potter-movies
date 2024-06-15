@@ -1,0 +1,61 @@
+<div class="d-flex justify-content-center" *ngIf="showLoader">
+    <div class="spinner-border" role="status">
+        <span class="sr-only" id="loading"></span>
+    </div>
+</div>
+
+<div class="container" *ngIf="!showLoader">
+    <div class="row">
+        <div class="col-md-10">
+
+            <button class="back" (click)="goBack()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>Back</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{movieDetails.title}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <img [src]="imgSrc" class="poster" alt="Poster" width="auto" height="auto">
+        </div>
+        <div class="col-md-9 summary">
+            <b>Summary:</b> {{movieDetails.summary}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 details">
+            <span>Details</span>
+        </div>
+        <div class="row">
+            <table style="border: 1px solid;">
+                <tr>
+                    <th>Box Office</th>
+                    <td>{{movieDetails.box_office | budget}}</td>
+                </tr>
+                <tr>
+                    <th>Budget</th>
+                    <td>{{movieDetails.budget | budget}}</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>{{movieDetails.duration | timePipe}}</td>
+                </tr>
+                <tr>
+                    <th>Producers</th>
+                    <td>{{movieDetails.producers}}</td>
+                </tr>
+                <tr>
+                    <th>Cinematographers</th>
+                    <td>{{movieDetails.cinematographers}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>

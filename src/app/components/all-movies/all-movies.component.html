@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="filters">
+        <div class="row">
+            <h4>Filters</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span>Title</span>
+            </div>
+            <div class="col-md-4">
+                <input type="text" style="width: 100%; height: 30px;" [(ngModel)]="searchText">
+            </div>
+            <div class="col-md-2">
+                <span>Release Year</span>
+            </div>
+            <div class="col-md-4">
+                <input type="number" style="width: 100%; height: 30px;" [(ngModel)]="searchYear">
+            </div>
+        </div>
+    </div>
+    <div class="moviesList">
+        <ng-container *ngFor="let movie of moviesList | filter : searchText : searchYear">
+            <div class="row movie">
+                <div class="col-md-10">
+                    <li>
+                        {{movie.title}}
+                    </li>
+                    <div class="row details">
+                        <div class="col-md-4">
+                            <span>Release date: {{movie.release_date}}</span>
+                        </div>
+                        <div class="col-md-4">
+                            <span>Budget: {{movie.budget | budget}}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Duration: {{movie.duration | timePipe}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" (click)="displayMovieDetails(movie)" id="${{movie.id}}">Details</button>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
